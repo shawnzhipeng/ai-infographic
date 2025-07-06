@@ -12,27 +12,29 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Material Blue Grey 50 */
+            background-color: #ffffff; 
         }
-        .material-card {
+        .notion-card {
             background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            border-radius: 8px;
+            border: 1px solid #ededed;
+            transition: background-color 0.2s ease;
         }
-        .material-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
+        .notion-card:hover {
+            background-color: #f7f7f5;
         }
-        .material-button {
-            background-color: #0288d1; /* Material Light Blue 700 */
-            color: #ffffff;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+        .notion-button {
+            background-color: transparent;
+            color: #37352f;
+            transition: background-color 0.2s ease;
+            border-radius: 6px;
         }
-        .material-button:hover {
-            background-color: #01579b; /* Darker blue for hover */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        .notion-button:hover {
+            background-color: #e3e3e1;
+        }
+        .notion-button-primary {
+             background-color: #f7f7f5;
+             border: 1px solid #e3e3e1;
         }
         .timeline-item::before {
             content: '';
@@ -43,14 +45,14 @@
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background-color: #0288d1;
-            border: 4px solid #b3e5fc; /* Material Light Blue 100 */
+            background-color: #555;
+            border: 4px solid #f1f1f0;
             z-index: 10;
         }
         .timeline-line {
-            background-color: #4fc3f7; /* Material Light Blue 300 */
+            background-color: #e3e3e1; 
         }
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
             .timeline-item::before {
                 left: -9px;
                 top: 50%;
@@ -78,8 +80,8 @@
             transition: transform 0.3s ease;
         }
         .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #0288d1;
+            border: 4px solid #e5e5e5;
+            border-top: 4px solid #333;
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -91,16 +93,16 @@
         }
     </style>
 </head>
-<body class="text-slate-800">
+<body class="text-[#37352f]">
 
-    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+    <div class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
         
         <header class="text-center mb-16">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-[#01579b]">Shawn's AI-Powered Infographic</h1>
-            <p class="mt-3 text-base md:text-lg text-[#0288d1]">Get to know my work through this interactive experience.</p>
+            <h1 class="text-3xl md:text-4xl font-bold text-[#1d1d1f]">Shawn's AI-Powered Infographic</h1>
+            <p class="mt-3 text-base md:text-lg text-[#7f7f7f]">Get to know my work through this interactive experience.</p>
             <div class="mt-8 text-center">
-                <button id="header-chat-btn" class="material-button font-bold py-3 px-8 rounded-full flex items-center justify-center mx-auto">
-                    <span class="mr-2 text-xl">✨</span> Ask AI About My Work
+                <button id="header-chat-btn" class="notion-button notion-button-primary font-semibold py-2 px-5 flex items-center justify-center mx-auto">
+                    <span class="mr-2 text-lg">✨</span> Ask AI About My Work
                 </button>
             </div>
         </header>
@@ -108,138 +110,145 @@
         <main class="space-y-20">
 
             <section id="journey">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-[#01579b]">My Journey into Design</h2>
-                <div class="relative max-w-5xl mx-auto md:grid md:grid-cols-3 md:gap-8">
-                    <div class="hidden md:block absolute w-full h-0.5 timeline-line top-1/2 -translate-y-1/2"></div>
-                    <div class="md:hidden absolute w-0.5 h-full timeline-line left-1/2 -translate-x-1/2"></div>
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-[#1d1d1f]">My Journey into Design</h2>
+                <div class="relative max-w-6xl mx-auto lg:flex justify-between items-stretch lg:space-x-6">
+                    <div class="hidden lg:block absolute w-full h-0.5 timeline-line top-1/2 -translate-y-1/2"></div>
+                    <div class="lg:hidden absolute w-0.5 h-full timeline-line left-1/2 -translate-x-1/2"></div>
                     
-                    <div class="relative mb-12 md:mb-0 flex">
+                    <div class="relative flex-1 mb-12 lg:mb-0 flex">
                          <div class="timeline-item"></div>
-                        <div class="material-card p-6 w-full">
-                            <h3 class="text-lg font-bold mb-2 text-[#0288d1]">1. The Spark</h3>
-                            <p class="text-slate-600 text-sm">Started in business, learning strategy and market needs. I became fascinated by the 'why' behind a product's success.</p>
+                        <div class="notion-card p-6 w-full">
+                            <h3 class="text-lg font-bold mb-2 text-[#4A90E2]">1. The Spark</h3>
+                            <p class="text-[#37352f] text-sm">Started in business, learning strategy and market needs. I became fascinated by the 'why' behind a product's success.</p>
                         </div>
                     </div>
-                    <div class="relative mb-12 md:mb-0 flex">
+                    <div class="relative flex-1 mb-12 lg:mb-0 flex">
                         <div class="timeline-item"></div>
-                        <div class="material-card p-6 w-full">
-                            <h3 class="text-lg font-bold mb-2 text-[#0288d1]">2. The Transition</h3>
-                            <p class="text-slate-600 text-sm">Pursued a Master of Digital Media to connect my business mindset with the craft of design, learning the 'how'.</p>
+                        <div class="notion-card p-6 w-full">
+                            <h3 class="text-lg font-bold mb-2 text-[#4A90E2]">2. The Transition</h3>
+                            <p class="text-[#37352f] text-sm">Pursued a Master of Digital Media to connect my business mindset with the craft of design, learning the 'how'.</p>
                         </div>
                     </div>
-                    <div class="relative flex">
+                    <div class="relative flex-1 mb-12 lg:mb-0 flex">
                          <div class="timeline-item"></div>
-                        <div class="material-card p-6 w-full">
-                            <h3 class="text-lg font-bold mb-2 text-[#0288d1]">3. The Foundation</h3>
-                            <p class="text-slate-600 text-sm">My first role at SAP was my design bootcamp, applying design principles to complex, real-world enterprise problems.</p>
+                        <div class="notion-card p-6 w-full">
+                            <h3 class="text-lg font-bold mb-2 text-[#4A90E2]">3. The Foundation</h3>
+                            <p class="text-[#37352f] text-sm">My first role at SAP was my design bootcamp, applying design principles to complex, real-world enterprise problems.</p>
+                        </div>
+                    </div>
+                     <div class="relative flex-1 flex">
+                         <div class="timeline-item"></div>
+                        <div class="notion-card p-6 w-full">
+                            <h3 class="text-lg font-bold mb-2 text-[#4A90E2]">4. Impact at Scale</h3>
+                            <p class="text-[#37352f] text-sm">At Microsoft, I began leading design for major products, driving strategy and delivering measurable impact for millions of users.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="amplify-saga" class="material-card p-6 md:p-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-[#01579b]">My Signature Story: The Viva Amplify Saga</h2>
-                <p class="text-center text-base text-slate-600 mb-12 max-w-3xl mx-auto">How we built a successful app from scratch... and then "killed" it to make it a superpower.</p>
+            <section id="viva-engage" class="notion-card p-6 md:p-10 text-center">
+                 <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[#1d1d1f]">Current Focus: Viva Engage</h2>
+                 <p class="text-base text-[#7f7f7f] mb-6 max-w-2xl mx-auto">I am currently leading design for leadership and storyline features, shaping how leaders connect with employees at scale across Microsoft Teams and Viva.</p>
+                 <a href="mailto:shawnzpdeng@gmail.com" class="notion-button notion-button-primary font-semibold py-2 px-5 inline-flex items-center justify-center mx-auto">
+                    Reach out for details
+                </a>
+            </section>
+
+            <section id="amplify-saga" class="notion-card p-6 md:p-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-[#1d1d1f]">My Signature Story: The Viva Amplify Saga</h2>
+                <p class="text-center text-base text-[#7f7f7f] mb-12 max-w-3xl mx-auto">How we built a successful app from scratch... and then "killed" it to make it a superpower.</p>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
                     
-                    <div class="border-r-0 lg:border-r-2 border-dashed border-[#b3e5fc] pr-0 lg:pr-8">
-                        <h3 class="text-xl font-bold text-[#0288d1] mb-4">Chapter 1: Idea to Impact</h3>
-                        <p class="text-slate-600 mb-6 text-sm">We solved a critical gap for corporate communicators by building Microsoft's first dedicated solution for managing internal campaigns, achieving rapid product-market fit.</p>
+                    <div class="border-r-0 lg:border-r lg:border-dashed border-slate-200 pr-0 lg:pr-8">
+                        <h3 class="text-xl font-bold text-[#1d1d1f] mb-4">Chapter 1: Idea to Impact</h3>
+                        <p class="text-[#37352f] mb-6 text-sm">We solved a critical gap for corporate communicators by building Microsoft's first dedicated solution for managing internal campaigns, achieving rapid product-market fit.</p>
                         <div class="grid grid-cols-2 gap-4 text-center">
-                            <div class="material-card p-4">
-                                <p class="text-2xl md:text-3xl font-extrabold text-[#01579b]">$8.8M</p>
+                            <div class="notion-card p-4">
+                                <p class="text-2xl md:text-3xl font-extrabold text-[#1d1d1f]">$8.8M</p>
                                 <p class="text-xs text-slate-500 mt-1">FY24 Revenue</p>
                             </div>
-                            <div class="material-card p-4">
-                                <p class="text-2xl md:text-3xl font-extrabold text-[#01579b]">620K</p>
+                            <div class="notion-card p-4">
+                                <p class="text-2xl md:text-3xl font-extrabold text-[#1d1d1f]">620K</p>
                                 <p class="text-xs text-slate-500 mt-1">Monthly Active Users</p>
                             </div>
-                            <div class="material-card p-4">
-                                <p class="text-2xl md:text-3xl font-extrabold text-[#01579b]">120+</p>
+                            <div class="notion-card p-4">
+                                <p class="text-2xl md:text-3xl font-extrabold text-[#1d1d1f]">120+</p>
                                 <p class="text-xs text-slate-500 mt-1">Enterprise Customers</p>
                             </div>
-                             <div class="material-card p-4">
-                                <p class="text-2xl md:text-3xl font-extrabold text-[#01579b]">2.29K</p>
+                             <div class="notion-card p-4">
+                                <p class="text-2xl md:text-3xl font-extrabold text-[#1d1d1f]">2.29K</p>
                                 <p class="text-xs text-slate-500 mt-1">Campaigns Created</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="mt-8 lg:mt-0">
-                        <h3 class="text-xl font-bold text-[#0288d1] mb-4">Chapter 2: Impact to Evolution</h3>
-                        <p class="text-slate-600 mb-6 text-sm">We learned our app was 'overkill' for many. So, we evolved it from a destination into an invisible, embedded capability to meet users where they work.</p>
+                        <h3 class="text-xl font-bold text-[#1d1d1f] mb-4">Chapter 2: Impact to Evolution</h3>
+                        <p class="text-[#37352f] mb-6 text-sm">We learned our app was 'overkill' for many. So, we evolved it from a destination into an invisible, embedded capability to meet users where they work.</p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="material-card p-4 flex flex-col items-center justify-center">
+                            <div class="notion-card p-4 flex flex-col items-center justify-center">
                                 <div class="chart-container" style="height:150px; max-height:150px;">
                                     <canvas id="adoptionRateChart"></canvas>
                                 </div>
                                 <p class="text-xs text-slate-500 mt-2 font-semibold">Adoption Rate</p>
                             </div>
-                            <div class="material-card p-4 flex flex-col items-center justify-center">
+                            <div class="notion-card p-4 flex flex-col items-center justify-center">
                                 <div class="chart-container" style="height:150px; max-height:150px;">
                                     <canvas id="growthChart"></canvas>
                                 </div>
                                  <p class="text-xs text-slate-500 mt-2 font-semibold">MoM Growth</p>
                             </div>
                         </div>
-                        <div class="mt-6 flex items-center justify-center space-x-4 text-center font-semibold text-[#0288d1]">
-                            <div class="bg-[#e1f5fe] p-3 rounded-lg text-sm">Module</div>
-                             <div class="text-2xl text-[#4fc3f7]">&rarr;</div>
-                            <div class="bg-[#b3e5fc] p-3 rounded-lg text-sm">Verb</div>
-                             <div class="text-2xl text-[#4fc3f7]">&rarr;</div>
-                            <div class="bg-[#4fc3f7] text-white p-3 rounded-lg text-sm">Superpower</div>
+                        <div class="mt-6 flex items-center justify-center space-x-4 text-center font-semibold text-slate-700">
+                            <div class="bg-slate-100 p-3 rounded-md text-sm">Module</div>
+                             <div class="text-2xl text-slate-400">&rarr;</div>
+                            <div class="bg-slate-200 p-3 rounded-md text-sm">Verb</div>
+                             <div class="text-2xl text-slate-400">&rarr;</div>
+                            <div class="bg-slate-800 text-white p-3 rounded-md text-sm">Superpower</div>
                         </div>
                     </div>
 
                 </div>
                  <div class="text-center mt-12">
-                    <button id="analyzeAmplifyBtn" class="material-button font-bold py-2 px-6 rounded-full flex items-center justify-center mx-auto">
+                    <button id="analyzeAmplifyBtn" class="notion-button notion-button-primary font-semibold py-2 px-4 flex items-center justify-center mx-auto">
                         <span class="mr-2">✨</span> Analyze this Project with AI
                     </button>
                 </div>
             </section>
             
             <section id="foundation">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-[#01579b]">The Foundation: Lessons from SAP</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-[#1d1d1f]">The Foundation: Lessons from SAP</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="material-card p-6">
+                    <div class="notion-card p-6">
                         <div class="text-3xl mb-3">📱</div>
-                        <h3 class="text-lg font-bold mb-2 text-[#0288d1]">Product Design</h3>
-                        <p class="text-slate-600 text-sm">Translated complex data into intuitive mobile experiences for the SAP Analytics Cloud app.</p>
+                        <h3 class="text-lg font-bold mb-2 text-[#1d1d1f]">Product Design</h3>
+                        <p class="text-[#37352f] text-sm">Translated complex data into intuitive mobile experiences for the SAP Analytics Cloud app.</p>
                     </div>
-                     <div class="material-card p-6">
+                     <div class="notion-card p-6">
                         <div class="text-3xl mb-3">⚙️</div>
-                        <h3 class="text-lg font-bold mb-2 text-[#0288d1]">Systems Design</h3>
-                        <p class="text-slate-600 text-sm">Created coherence by authoring guidelines for the HANA & Analytics Design System.</p>
+                        <h3 class="text-lg font-bold mb-2 text-[#1d1d1f]">Systems Design</h3>
+                        <p class="text-[#37352f] text-sm">Created coherence by authoring guidelines for the HANA & Analytics Design System.</p>
                     </div>
-                     <div class="material-card p-6">
+                     <div class="notion-card p-6">
                         <div class="text-3xl mb-3">🤝</div>
-                        <h3 class="text-lg font-bold mb-2 text-[#0288d1]">Service Design</h3>
-                        <p class="text-slate-600 text-sm">Improved the entire design process through workflow challenges that onboarded and pressure-tested products.</p>
+                        <h3 class="text-lg font-bold mb-2 text-[#1d1d1f]">Service Design</h3>
+                        <p class="text-[#37352f] text-sm">Improved the entire design process through workflow challenges that onboarded and pressure-tested products.</p>
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                    <button id="analyzeSapBtn" class="material-button font-bold py-2 px-6 rounded-full flex items-center justify-center mx-auto">
+                    <button id="analyzeSapBtn" class="notion-button notion-button-primary font-semibold py-2 px-4 flex items-center justify-center mx-auto">
                          <span class="mr-2">✨</span> Analyze this Experience with AI
                     </button>
                 </div>
             </section>
-            
-            <section id="ai-insights" class="text-center bg-gradient-to-r from-[#0288d1] to-[#4fc3f7] rounded-2xl shadow-lg p-8 md:p-12">
-                <h2 class="text-2xl font-bold text-white mb-4">AI Career Insights</h2>
-                <p class="text-white/90 mb-6 max-w-2xl mx-auto text-sm">Recruiters and hiring managers, get a head start. Click below to generate interview questions tailored to this unique profile.</p>
-                <button id="generateQuestionsBtn" class="bg-white text-[#0288d1] font-bold py-3 px-8 rounded-full hover:bg-slate-100 transition-colors">
-                    Generate Interview Questions
-                </button>
-            </section>
 
              <section id="conclusion" class="text-center">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-[#01579b]">What I Bring to the Table</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-[#1d1d1f]">What I Bring to the Table</h2>
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="material-card p-4"><p class="font-semibold text-slate-700 text-sm">🚀 Strategic Thinking</p></div>
-                    <div class="material-card p-4"><p class="font-semibold text-slate-700 text-sm">🌐 Systems-Oriented</p></div>
-                    <div class="material-card p-4"><p class="font-semibold text-slate-700 text-sm">🎯 Impact-Driven</p></div>
+                    <div class="notion-card p-4"><p class="font-semibold text-slate-700 text-sm">🚀 Strategic Thinking</p></div>
+                    <div class="notion-card p-4"><p class="font-semibold text-slate-700 text-sm">🌐 Systems-Oriented</p></div>
+                    <div class="notion-card p-4"><p class="font-semibold text-slate-700 text-sm">🎯 Impact-Driven</p></div>
                 </div>
             </section>
 
@@ -253,9 +262,9 @@
 
     <!-- AI Modal -->
     <div id="aiModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden opacity-0">
-        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 md:p-8 transform scale-95">
+        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 md:p-8 transform scale-95 border border-slate-200">
             <div class="flex justify-between items-center border-b pb-3 mb-4">
-                <h3 id="modalTitle" class="text-xl font-bold text-[#01579b]">AI Analysis</h3>
+                <h3 id="modalTitle" class="text-xl font-bold text-[#1d1d1f]">AI Analysis</h3>
                 <button id="closeModalBtn" class="text-slate-500 hover:text-slate-800 text-3xl">&times;</button>
             </div>
             <div id="modalBody">
@@ -269,26 +278,26 @@
 
     <!-- AI Chatbot Widget -->
     <div id="chat-fab" class="fixed bottom-6 right-6 z-40">
-        <button class="material-button w-16 h-16 rounded-full flex items-center justify-center text-3xl transform hover:scale-110">
+        <button class="bg-white w-16 h-16 rounded-full flex items-center justify-center text-3xl transform hover:scale-110 shadow-lg border border-slate-200">
             <span>✨</span>
         </button>
     </div>
 
     <div id="chat-widget" class="fixed bottom-24 right-6 w-full max-w-md h-[70vh] max-h-[600px] z-40 hidden opacity-0 transform translate-y-4">
         <div class="bg-white h-full rounded-2xl shadow-2xl flex flex-col border border-slate-200">
-            <header class="bg-[#0288d1] text-white p-4 rounded-t-2xl flex justify-between items-center">
+            <header class="bg-slate-50 text-[#1d1d1f] p-4 rounded-t-2xl flex justify-between items-center border-b border-slate-200">
                 <h3 class="font-bold text-base">Ask AI About My Work</h3>
                 <button id="closeChatBtn" class="text-2xl opacity-70 hover:opacity-100">&times;</button>
             </header>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 bg-slate-50">
-                <div class="p-3 rounded-lg bg-slate-100 text-slate-800 max-w-xs text-sm">
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 bg-white">
+                <div class="p-3 rounded-lg bg-slate-100 text-[#37352f] max-w-xs text-sm">
                     Hi there! Ask me anything about Shawn's projects, skills, or experience.
                 </div>
             </div>
             <footer class="p-4 border-t bg-white">
                 <form id="chat-form" class="flex items-center space-x-2">
-                    <input type="text" id="chat-input" placeholder="Type your question..." class="flex-1 p-2 border border-slate-300 rounded-full focus:ring-2 focus:ring-[#4fc3f7] focus:outline-none text-sm">
-                    <button type="submit" class="material-button w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">&uarr;</button>
+                    <input type="text" id="chat-input" placeholder="Type your question..." class="flex-1 p-2 border border-slate-300 rounded-full focus:ring-2 focus:ring-[#4A90E2] focus:outline-none text-sm">
+                    <button type="submit" class="bg-[#1d1d1f] text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl hover:bg-[#333] transition-colors">&uarr;</button>
                 </form>
             </footer>
         </div>
@@ -301,6 +310,12 @@
                 Shawn Deng - Portfolio Summary:
                 
                 Overall Profile: A product designer with a business background and over 6 years of experience, currently at Microsoft in Vancouver. He specializes in bridging user needs with strategic business goals to deliver measurable impact, focusing on design coherence in complex environments.
+                
+                ---
+                
+                Current Work: Viva Engage (Microsoft)
+                - Role: Leading design for leadership and storyline features.
+                - Goal: Shaping how leaders connect with employees at scale across Microsoft Teams and Viva. This work is ongoing and details are limited.
                 
                 ---
                 
@@ -335,7 +350,7 @@
                 - Strategic Thinking: Connects design decisions to business outcomes.
                 - Systems-Oriented: Thrives in complex ecosystems and creates coherence.
                 - Impact-Driven: Focuses on delivering measurable results.
-                - Journey: Transitioned from a business background, through a Master of Digital Media, to a designer at SAP and now Microsoft.
+                - Journey: Transitioned from a business background, through a Master of Digital Media, to a designer at SAP and now Microsoft, where he makes impact at scale.
             `;
 
             const tooltipTitleCallback = (tooltipItems) => {
@@ -349,11 +364,11 @@
                 type: 'doughnut',
                 data: {
                     labels: ['Adopted', 'Not Adopted'],
-                    datasets: [{ label: 'Adoption Rate', data: [78, 22], backgroundColor: ['#4fc3f7', '#e0e0e0'], borderColor: ['#ffffff', '#ffffff'], borderWidth: 4, cutout: '70%' }]
+                    datasets: [{ label: 'Adoption Rate', data: [78, 22], backgroundColor: ['#4A90E2', '#e5e5e5'], borderColor: ['#ffffff', '#ffffff'], borderWidth: 4, cutout: '70%' }]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback } }, title: { display: true, text: '78%', position: 'bottom', align: 'center', font: { size: 24, weight: 'bold', family: 'Inter' }, color: '#01579b', padding: { top: -60 } } }
+                    plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback } }, title: { display: true, text: '78%', position: 'bottom', align: 'center', font: { size: 24, weight: 'bold', family: 'Inter' }, color: '#1d1d1f', padding: { top: -60 } } }
                 }
             });
 
@@ -361,7 +376,7 @@
                 type: 'line',
                 data: {
                     labels: ['Week 1', 'Week 4', 'Week 8', 'Week 12'],
-                    datasets: [{ label: 'Adoption Growth', data: [21, 45, 65, 78], fill: true, backgroundColor: 'rgba(79, 195, 247, 0.2)', borderColor: '#4fc3f7', tension: 0.4, pointBackgroundColor: '#0288d1', pointBorderColor: '#fff', pointHoverBackgroundColor: '#fff', pointHoverBorderColor: '#0288d1' }]
+                    datasets: [{ label: 'Adoption Growth', data: [21, 45, 65, 78], fill: true, backgroundColor: 'rgba(74, 144, 226, 0.1)', borderColor: '#4A90E2', tension: 0.4, pointBackgroundColor: '#4A90E2', pointBorderColor: '#fff', pointHoverBackgroundColor: '#fff', pointHoverBorderColor: '#4A90E2' }]
                 },
                 options: {
                     responsive: true, maintainAspectRatio: false,
@@ -396,7 +411,7 @@
                 modalLoader.classList.remove('hidden');
                 openModal();
 
-                const apiKey = "AIzaSyDd32emNcGDwV3sUG18nNN0DpjfaM-hgow";
+                const apiKey = "AIzaSyDd32emNcGDwV3sUG18nNN0DpjfaM-hgow"; // Remember to add your API key here
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                 
                 const payload = {
@@ -424,7 +439,7 @@
                 let html = '';
                 for (const key in data) {
                     const title = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
-                    html += `<h4 class="text-lg font-bold text-[#0288d1] mt-4 mb-2">${title}</h4><ul class="list-disc list-inside space-y-2 text-slate-700 text-sm">`;
+                    html += `<h4 class="text-lg font-bold text-[#1d1d1f] mt-4 mb-2">${title}</h4><ul class="list-disc list-inside space-y-2 text-[#37352f] text-sm">`;
                     data[key].forEach(item => { html += `<li>${item}</li>`; });
                     html += '</ul>';
                 }
@@ -443,13 +458,7 @@
                 const schema = { type: "OBJECT", properties: { core_competencies_developed: { type: "ARRAY", items: { type: "STRING" } }, impact_on_career: { type: "ARRAY", items: { type: "STRING" } }, key_takeaways: { type: "ARRAY", items: { type: "STRING" } } } };
                 callGemini(prompt, schema);
             });
-            document.getElementById('generateQuestionsBtn').addEventListener('click', () => {
-                modalTitle.textContent = 'AI-Generated Interview Questions';
-                const prompt = `Generate insightful interview questions for a senior product designer role based on this profile: Led Microsoft Viva Amplify from creation ($8.8M revenue) to strategic evolution (embedded service with 78% adoption). Foundational experience at SAP in product, systems, and service design.`;
-                const schema = { type: "OBJECT", properties: { behavioral_questions: { type: "ARRAY", items: { type: "STRING" } }, strategy_and_impact_questions: { type: "ARRAY", items: { type: "STRING" } }, craft_and_systems_thinking_questions: { type: "ARRAY", items: { type: "STRING" } } } };
-                callGemini(prompt, schema);
-            });
-
+            
             const chatFab = document.getElementById('chat-fab');
             const chatWidget = document.getElementById('chat-widget');
             const closeChatBtn = document.getElementById('closeChatBtn');
@@ -494,7 +503,7 @@
                 User's Question: "${userInput}"`;
 
                 try {
-                    const apiKey = "AIzaSyDd32emNcGDwV3sUG18nNN0DpjfaM-hgow";
+                    const apiKey = "AIzaSyDd32emNcGDwV3sUG18nNN0DpjfaM-hgow"; // Remember to add your API key here
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                     const payload = { contents: [{ parts: [{ text: prompt }] }] };
 
@@ -516,9 +525,9 @@
                 messageDiv.textContent = text;
                 
                 if (sender === 'user') {
-                    messageDiv.className = 'p-3 rounded-lg bg-[#0288d1] text-white max-w-xs ml-auto text-sm';
+                    messageDiv.className = 'p-3 rounded-lg bg-[#4A90E2] text-white max-w-xs ml-auto text-sm';
                 } else {
-                    messageDiv.className = 'p-3 rounded-lg bg-slate-100 text-slate-800 max-w-xs text-sm';
+                    messageDiv.className = 'p-3 rounded-lg bg-slate-100 text-[#37352f] max-w-xs text-sm';
                 }
 
                 if (isLoader) {
