@@ -411,7 +411,7 @@
                 modalLoader.classList.remove('hidden');
                 openModal();
 
-                const apiKey = "AIzaSyDd32emNcGDwV3sUG18nNN0DpjfaM-hgow"; // Remember to add your API key here
+                const apiKey = ""; // Remember to add your API key here
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                 
                 const payload = {
@@ -503,7 +503,7 @@
                 User's Question: "${userInput}"`;
 
                 try {
-                    const apiKey = "AIzaSyDd32emNcGDwV3sUG18nNN0DpjfaM-hgow"; // Remember to add your API key here
+                    const apiKey = ""; // Remember to add your API key here
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                     const payload = { contents: [{ parts: [{ text: prompt }] }] };
 
